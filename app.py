@@ -16,5 +16,11 @@ db = mysql.connector.connect(
 def index():
     return render_template("landing.html", page="home")
 
+@app.route('/getuserip', methods=["POST", "GET"])
+def userip():
+    ip = request.environ['REMOTE_ADDR']
+    print(ip)
+    return render_template("landing.html", page="home", ip=ip)
+
 if __name__ == '__main__':
     app.run()

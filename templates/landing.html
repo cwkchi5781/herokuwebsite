@@ -1,22 +1,29 @@
 {% extends "layout.html" %}
-{% block content %}
+{% block one %}
 <div class="row">
 <div class="col-4 col-12-medium">
     <header>
         Hello Testing
     </header>
 </div>
-<div class="col-4 col-12-medium">
-Leave something
-</div>
-<div class="col-4 col-12-medium">
-    <div class="mx-2 p-1 border border-1 border-light" style="width=20px">
+<div class="col-8 col-24-medium">
+    Leave something
+    <div class="mx-2 p-1 border border-1 border-light" style="width=75%">
 
     </div>
     <form id="entry" action="/" method="post" onsubmit="return validation()">
     </form>
 </div>
+
 </div>
 
 
-{% endblock content %}
+{% endblock one %}
+
+{% block two %}
+
+idk what to do yet, yes i know this is boring
+{% if ip != '' %}
+your ip: {{ip}}
+{% endif %}
+{% endblock one %}

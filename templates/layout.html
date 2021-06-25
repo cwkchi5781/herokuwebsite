@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Landed by HTML5 UP</title>
+		<title>Chi Nguyen</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='trialmain.css') }}">
@@ -43,11 +43,11 @@
 				</section>
 
 			<!-- One -->
-				<section id="one" class="spotlight bottom style1">
+				<section id="one" class="spotlight bottom style1" style="height=50%">
 					<span class="image fit main"><img src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="" /></span>
 					<div class="content">
 						<div class="container">
-							{% block content %}
+							{% block one %}
 
 							{% endblock %}
 						</div>
@@ -60,7 +60,10 @@
 					<span class="image fit main"><img src="{{ url_for('static', filename='images/pic02.jpg') }}" alt="" /></span>
 					<div class="content">
 						<div class="container">
-							idk what to do yet, yes i know this is boring
+							{% block two %}
+
+							{% endblock %}
+
 						</div>
 					</div>
 					<a href="#footer" class="goto-next scrolly">Next</a>
