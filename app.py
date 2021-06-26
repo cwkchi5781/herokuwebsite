@@ -31,7 +31,7 @@ def index():
 def sendusername(data):
     print("server recieve")
     sql = "SELECT * FROM enteries WHERE username=%s"
-    username = (str(data),)
+    username = (str(data['username']),)
     cursor.execute(sql, username)
     usernamestatus = cursor.fetchall()
     if usernamestatus == []:

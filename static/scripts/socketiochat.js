@@ -1,6 +1,6 @@
   $(function() {
-      //var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
-    var socket = io();
+      var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
+    //var socket = io();
 
 
     var username = null;
@@ -21,9 +21,9 @@
 
           console.log("hi button stuff");
 
-          username = $("#username-input").val();
+          username = $("#username-input").val().toString();
             console.log("client emit");
-         socket.emit("sendusername", username);
+         socket.emit("sendusername", {"username":username});
          //io.serverSideEmit('sendusername', {'username': username} );
          //io.emit('sendusername', {'username': username} );
 
