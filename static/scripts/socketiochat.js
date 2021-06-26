@@ -7,16 +7,17 @@
 
     var wrapper = $("#live-chat-alert").parent("div.clearfix")
     $("#live-chat-username-button").click(function() {
+        if(wrapper.hasClass( "alert" )){
+            wrapper.removeClass("alert alert-warning");
+            $( "#live-chat-alert" ).html("");
+         }
       //console.log(event)
      //event.preventDefault();
      if ($("#username-input").val() == ''){
         wrapper.addClass("alert alert-warning");
         $( "#live-chat-alert" ).html("No username entered");
      }else{
-         if(wrapper.hasClass( "alert" )){
-            wrapper.removeClass("alert alert-warning");
-            $( "#live-chat-alert" ).html("");
-         }
+
 
           console.log("hi button stuff");
 

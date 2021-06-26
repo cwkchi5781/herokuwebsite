@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify, redirect, session, url_for
+from flask_socketio import SocketIO, emit
 import gunicorn, mysql.connector
 from datetime import datetime
 
@@ -12,15 +13,33 @@ db = mysql.connector.connect(
     password="27fb9f4e",
     database="heroku_bde763ff3f353c6")
 
+cursor = db.cursor()
+
+app.config['SECRET_KEY'] = 'dfgdfgdf'
+socketio = SocketIO(app)
+
+
+cursor.execute("CREATE TABLE IF NOT EXISTS enteries (id INT PRIMARY KEY AUTO_INCREMENT, username VARCHAR(50), text VARCHAR(100))")
+
+
+
 @app.route('/', methods=["POST", "GET"])
 def index():
     return render_template("landing.html", page="home")
 
-@app.route('/getuserip', methods=["POST", "GET"])
-def userip():
-    ip = request.environ['REMOTE_ADDR']
-    print(ip)
-    return render_template("landing.html", page="home", ip=ip)
+@socketio.on('sendusername')
+def sendusername(data):
+    print("server recieve")
+    sql = "SELECT * FROM enteries WHERE username=%s"
+    username = (str(data),)
+    cursor.execute(sql, username)
+    usernamestatus = cursor.fetchall()
+    if usernamestatus == []:
+        usernamestatus = True
+    else:
+        usernamestatus = False
+
+    emit('comfirmusername', usernamestatus)
 
 if __name__ == '__main__':
-    app.run()
+    socketio.run()
