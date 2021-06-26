@@ -1,9 +1,9 @@
-from asyncio import transports
 
 from flask import Flask, render_template, request, jsonify, redirect, session, url_for
 from flask_socketio import SocketIO, emit
 import gunicorn, mysql.connector
 from datetime import datetime
+
 
 
 app = Flask(__name__)
@@ -18,7 +18,7 @@ db = mysql.connector.connect(
 cursor = db.cursor()
 
 app.config['SECRET_KEY'] = 'dfgdfgdf'
-socketio = SocketIO(app)
+socketio = SocketIO(app, {'transports': ['websocket']})
 
 cursor.execute("CREATE TABLE IF NOT EXISTS enteries (id INT PRIMARY KEY AUTO_INCREMENT, username VARCHAR(50), text VARCHAR(100))")
 
@@ -26,7 +26,6 @@ cursor.execute("CREATE TABLE IF NOT EXISTS enteries (id INT PRIMARY KEY AUTO_INC
 
 @app.route('/', methods=["POST", "GET"])
 def index():
-    print("loading")
     return render_template("landing.html", page="home")
 
 @socketio.on('sendusername')
