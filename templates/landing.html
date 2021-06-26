@@ -6,22 +6,61 @@
         Hello Testing
     </header>
 </div>
-<div class="col-8 col-24-medium">
+<div class="col-8 col-12-medium mx-auto">
     Leave something
     <div class="mx-2 p-1 border border-1 border-light" style="width=75%">
 
+    <div class="detailBox rounded-3">
+    <div class="titleBox">
+      <label>Comment Box</label>
+       <!-- <button type="button" class="close" aria-hidden="true">&times;</button>-->
     </div>
-    <form id="entry" action="/" method="post" onsubmit="return validation()">
-    </form>
+    <div class="commentBox">
+
+            <p class="taskDescription">Enter temporary username to join chat
+
+            </p>
+        <div id="live-chat-alert-wrapper" class="clearfix">
+        <alert id="live-chat-alert" style="vertical-align: middle;" role="alert"></alert>
+        </div>
+        </div>
+        <div class="actionBox">
+            <ul class="commentList">
+                <span>Load More</span>
+            </ul>
+            <form class="form-inline hide" role="form" id="live-chat-message">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Your comments" />
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-default">Add</button>
+                </div>
+            </form>
+            <form class="form-inline " role="form" id="live-chat-username">
+                <div class="form-group">
+                    <input id="username-input" class="form-control" type="text" placeholder="Username" />
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default" type="button" id="live-chat-username-button" value="Enter">Enter</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 </div>
 
+</div>
 
 {% endblock one %}
 
 {% block two %}
 
-idk what to do yet, yes i know this is boring
+idk what to do yet, yes i know this is boring.
+    Credit:
+    Myself
+    HTML CSS and JS templates for the looks
+    Too many coding tutorials on the internet for the rest
+
 
 {% endblock two %}

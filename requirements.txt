@@ -2,3 +2,5 @@ mysql-connector-python
 flask
 gunicorn
 datetime
+flask-socketio
+time

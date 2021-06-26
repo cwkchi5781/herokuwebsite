@@ -14,6 +14,8 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fontawesome-all.min.css') }}">
 		<script src="https://kit.fontawesome.com/3826384c75.js" crossorigin="anonymous"></script>
+
+
 	</head>
 	<body class="is-preload landing">
 		<div id="page-wrapper">
@@ -23,9 +25,16 @@
 					<h1 id="logo"><a href="index.html">Chi Nguyen</a></h1>
 					<nav id="nav">
 						<ul>
+							{% if page == 'home' %}
+							<li><a href="#" class="fw-bolder">Home</a></li>
+							{% else %}
 							<li><a href="#">Home</a></li>
+							{% endif %}
+							{% if page == 'aboutme' %}
+							<li><a href="#" class="fw-bolder">About Me</a></li>
+							{% else %}
 							<li><a href="#">About Me</a></li>
-							<li><a href="#" class="button primary">Contact</a></li>
+							{% endif %}
 						</ul>
 					</nav>
 				</header>
@@ -72,10 +81,11 @@
 			<!-- Footer -->
 				<footer id="footer">
 					<ul class="icons">
-						<li><a href="#" class="icon alt bi-twitter"><span class="label">Twitter</span></a></li>
+						<!--<li><a href="#" class="icon alt bi-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="#" class="icon  alt bi bi-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon  alt bi bi-linkedin"><span class="label">LinkedIn</span></a></li>
 						<li><a href="#" class="icon  alt bi bi-instagram"><span class="label">Instagram</span></a></li>
+						-->
+						<li><a href="#" class="icon  alt bi bi-linkedin"><span class="label">LinkedIn</span></a></li>
 						<li><a href="#" class="icon  alt bi bi-github"><span class="label">GitHub</span></a></li>
 						<li><a href="#" class="icon solid alt bi bi-envelope"><span class="label">Email</span></a></li>
 					</ul>
@@ -87,18 +97,24 @@
 		</div>
 
 		<!-- Scripts -->
- 		  <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+		  <script src="{{ url_for('static', filename='scripts/jquery.min.js') }}"></script>
 		 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
 
-		  <script src="{{ url_for('static', filename='jquery.scrolly.min.js') }}"></script>
-		    <script src="{{ url_for('static', filename='jquery.dropotron.min.js') }}"></script>
-		    <script src="{{ url_for('static', filename='jquery.scrollex.min.js') }}"></script>
-		    <script src="{{ url_for('static', filename='browser.min.js') }}"></script>
-		    <script src="{{ url_for('static', filename='breakpoints.min.js') }}"></script>
 
-			<script src="{{ url_for('static', filename='util.js') }}"></script>
-			<script src="{{ url_for('static', filename='main.js') }}"></script>
+		  <script src="{{ url_for('static', filename='scripts/jquery.scrolly.min.js') }}"></script>
+		    <script src="{{ url_for('static', filename='scripts/jquery.dropotron.min.js') }}"></script>
+		    <script src="{{ url_for('static', filename='scripts/jquery.scrollex.min.js') }}"></script>
+		    <script src="{{ url_for('static', filename='scripts/browser.min.js') }}"></script>
+		    <script src="{{ url_for('static', filename='scripts/breakpoints.min.js') }}"></script>
+
+			<script src="{{ url_for('static', filename='scripts/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+			<script src="{{ url_for('static', filename='scripts/socketiochat.js') }}"></script>
+
+
+
 
 	</body>
 </html>
