@@ -1,7 +1,10 @@
   $(function() {
       //var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
     //var socket = io();
-    var socket = io('', {transports: ['websocket']});
+    var socket = io({transports: ['websocket']});
+
+
+
 
 
 
