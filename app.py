@@ -17,7 +17,7 @@ cursor = db.cursor()
 
 app.config['SECRET_KEY'] = 'dfgdfgdf'
 socketio = SocketIO(app)
-#socketio.init_app(app, cors_allowed_origins="*")
+socketio.init_app(app, cors_allowed_origins="*")
 
 cursor.execute("CREATE TABLE IF NOT EXISTS enteries (id INT PRIMARY KEY AUTO_INCREMENT, username VARCHAR(50), text VARCHAR(100))")
 
