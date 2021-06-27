@@ -1,4 +1,4 @@
-
+from engineio.async_drivers import eventlet
 from flask import Flask, render_template, request, jsonify, redirect, session, url_for
 from flask_socketio import SocketIO, emit
 import gunicorn, mysql.connector
@@ -19,9 +19,8 @@ cursor = db.cursor()
 
 app.config['SECRET_KEY'] = 'dfgdfgdf'
 socketio = SocketIO(app)
-socketio = SocketIO(app, async_mode='eventlet')
+socketio = SocketIO(app)
 
-socketio.init_app(app, cors_allowed_origins=["https://portfolio2004.herokuapp.com/0"])
 
 
 cursor.execute("CREATE TABLE IF NOT EXISTS enteries (id INT PRIMARY KEY AUTO_INCREMENT, username VARCHAR(50), text VARCHAR(100))")
