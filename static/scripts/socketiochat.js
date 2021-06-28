@@ -30,6 +30,7 @@
 
           username = $("#username-input").val().toString();
             console.log("client emit");
+            console.log((socket.emit("sendusername", {"username":username})).toString());
          socket.emit("sendusername", {"username":username});
          //io.serverSideEmit('sendusername', {'username': username} );
          //io.emit('sendusername', {'username': username} );

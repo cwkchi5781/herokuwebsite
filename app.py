@@ -31,6 +31,7 @@ cursor.execute("CREATE TABLE IF NOT EXISTS enteries (id INT PRIMARY KEY AUTO_INC
 
 @app.route('/', methods=["POST", "GET"])
 def index():
+    print("hi")
     return render_template("landing.html", page="home")
 
 @socketio.on('sendusername')
