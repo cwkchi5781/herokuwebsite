@@ -21,7 +21,7 @@ cursor = db.cursor()
 
 app.config['SECRET_KEY'] = 'dfgdfgdf'
 socketio = SocketIO(app)
-socketio.init_app(app, cors_allowed_origins=["https://portfolio2004.herokuapp.com/"])
+#socketio.init_app(app, cors_allowed_origins=["https://portfolio2004.herokuapp.com/"])
 
 #hi
 
