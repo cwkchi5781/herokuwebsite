@@ -1,10 +1,7 @@
-from engineio.async_drivers import eventlet
 from flask import Flask, render_template, request, jsonify, redirect, session, url_for
 from flask_socketio import SocketIO, emit
 import gunicorn, mysql.connector
 from datetime import datetime
-import gevent
-import gevent_websocket
 
 
 
